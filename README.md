@@ -12,6 +12,8 @@ This is a simple WebSocket-based chat application where clients can connect to a
 ## To send a message from client with UID 1 to client with UID 2:
  2 Hello, this is a message for you!
 
+ 3. get the server.js running and spawn clients by running terminalClient.js
+
  #### Server Interface
 
 <img width="1434" alt="Screenshot 2024-06-08 at 4 04 59 AM" src="https://github.com/ravikr88/real-time-chat/assets/135989427/26efcc19-5dd3-4543-98cd-d288cc0b9620">
