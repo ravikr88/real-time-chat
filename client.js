@@ -24,11 +24,16 @@ ws.on("close", function close() {
 });
 
 rl.on("line", (input) => {
-  // Split the input to extract recipient's UID and message content
-  const [recipientUID, ...messageParts] = input.split(" ");
-  const message = messageParts.join(" "); // Rejoin the message parts
+  // Check if the input contains a recipientUID for targeted messaging
+  if (input.startsWith("/msg")) {
+    const [command, recipientUID, ...messageParts] = input.split(" ");
+    const message = messageParts.join(" "); // Rejoin the message parts
 
-  // Send the message along with recipient's UID to the server
-  const messageWithRecipient = JSON.stringify({ recipientUID, message });
-  ws.send(messageWithRecipient);
+    // Send the message along with recipient's UID to the server
+    const messageWithRecipient = JSON.stringify({ recipientUID, message });
+    ws.send(messageWithRecipient);
+  } else {
+    // For public messaging, send the message without specifying a recipientUID
+    ws.send(JSON.stringify({ message: input }));
+  }
 });
