@@ -31,7 +31,7 @@ This is a simple WebSocket-based chat application where clients can connect to a
 
 #### Target Messessaging or Private messages
 
-- start your message as /msg uid your_message to send a specific user
+- start your message as _/msg uid your_message_ to send a specific user
 - otherwise all messages set are public
 - <img width="1434" alt="Screenshot 2024-06-08 at 4 37 45 AM" src="https://github.com/ravikr88/real-time-chat/assets/135989427/a88b5e9a-a13b-403a-9942-346219b12899">
 
